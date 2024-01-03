@@ -310,7 +310,12 @@ pub async fn get_series_episodes(
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/series/{id}/episodes/{season-type}", local_var_configuration.base_path, id=id, season-type=crate::apis::urlencode(season_type));
+    let local_var_uri_str = format!(
+        "{}/series/{id}/episodes/{season_type}",
+        local_var_configuration.base_path,
+        id = id,
+        season_type = crate::apis::urlencode(season_type)
+    );
     let mut local_var_req_builder =
         local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
@@ -549,7 +554,13 @@ pub async fn get_series_season_episodes_translated(
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/series/{id}/episodes/{season-type}/{lang}", local_var_configuration.base_path, id=id, season-type=crate::apis::urlencode(season_type), lang=crate::apis::urlencode(lang));
+    let local_var_uri_str = format!(
+        "{}/series/{id}/episodes/{season_type}/{lang}",
+        local_var_configuration.base_path,
+        id = id,
+        season_type = crate::apis::urlencode(season_type),
+        lang = crate::apis::urlencode(lang)
+    );
     let mut local_var_req_builder =
         local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
